@@ -1,7 +1,7 @@
 from django.db import models 
 from django.utils import timezone
 import datetime
-
+from extended_user.models import Profile
 
 class Product(models.Model):
     picture = models.FileField(upload_to='pics_product/', blank=True, null=True) 
@@ -24,10 +24,10 @@ class Reward(models.Model):
         return self.name
 
 
-class Profile_Rewards(models.Model):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, unique=True)
+class Profile_Reward(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE,related_name="reward_profile")
     reward = models.ForeignKey(Reward, on_delete=models.CASCADE)
-    checker = models.ForeignKey(Profile, on_delete=models.CASCADE, unique=True)
+    checker = models.ForeignKey(Profile, on_delete=models.CASCADE,related_name="reward_checker")
 
     def __str__(self):
         return str(self.profile.user.username + '_' + self.reward.name)
