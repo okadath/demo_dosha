@@ -28,6 +28,16 @@ class Profile_Reward(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE,related_name="reward_profile")
     reward = models.ForeignKey(Reward, on_delete=models.CASCADE)
     checker = models.ForeignKey(Profile, on_delete=models.CASCADE,related_name="reward_checker")
+    validity_expires = models.DateField( default=timezone.now() )
+
+    def __str__(self):
+        return str(self.profile.user.username + '_' + self.reward.name)
+
+class Profile_Product(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE,related_name="product_profile")
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    checker = models.ForeignKey(Profile, on_delete=models.CASCADE,related_name="product_checker")
+    validity_expires = models.DateField( default=timezone.now() )
 
     def __str__(self):
         return str(self.profile.user.username + '_' + self.reward.name)

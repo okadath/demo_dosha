@@ -26,7 +26,13 @@ from django.contrib.auth.views import PasswordResetView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('control_ventas/', include("control_ventas.urls")), 
-    path("", home, name='home'),
+    path("", login_func, name='login_func'),
+    path('logout/', logout, name='logout'),
+
+    path("recompensas", recompensas, name='recompensas'),
+    path("ventas", ventas, name='ventas'),
+    path("registra_venta", registra_venta, name='registra_venta'),
+
 ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

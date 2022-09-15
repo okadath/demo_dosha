@@ -24,6 +24,10 @@ class RewardAdmin(ImportExportModelAdmin):
 class Profile_RewardAdmin(ImportExportModelAdmin):
     search_fields = ('profile__user__username' ,"profile__id_user", "checker__user__username")
 
+@admin.register(Profile_Product)
+class Profile_ProductAdmin(ImportExportModelAdmin):
+    search_fields = ('profile__user__username' ,"profile__id_user", "checker__user__username")
+
 # @admin.register(User_Code)
 # class UserCodeAdmin(ImportExportModelAdmin):
 #     search_fields = ('code__code', 'user__username')

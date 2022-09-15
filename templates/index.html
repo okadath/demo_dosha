@@ -58,7 +58,58 @@ impartidas por oradores de primer nivel en una sede cerca de ti." />
 
 <!-- mi mierda -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
+<section class="section">
+    <div class="container">
+        <h1 class="title">
+            Fast Demo
+        </h1>
+
+            <nav class="panel">
+              <p class="panel-heading">
+                Login
+              </p>
+               {% if error_messages %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error_messages }}</strong>
+                    </div>
+                {% endif %}
+            <form method="post" action="{% url 'login_func' %}">
+                                    {% csrf_token %}
+              <div class="panel-block">
+                <div class="field">
+                    <label class="label">Username</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input is-success" type="text" placeholder="Id_user" name="id_user" id="id_user" >
+                        <!-- <input name="email" class="form-control" placeholder=" Email" type="email"> -->
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+<!--                         <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                        </span> -->
+                    </div>
+                    <!-- <p class="help is-success">This username is available</p> -->
+                    <br>
+                    <div class="field is-grouped">
+                      <div class="control">
+                        <!-- <input class="button is-link">Logueate</button> -->
+                        <button class="button is-link" type="submit" >Login</button>
+                      </div>
+                      <br>
+<!--                       <div class="control">
+                        <button class="button is-link is-light">Cancel</button>
+                      </div> -->
+                    </div>
+
+                </div>
+            </div>
+            </form>
+        </nav>
+
+    </div>
+</section>
 
 
 

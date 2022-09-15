@@ -76,6 +76,15 @@ TEMPLATES = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+
+    'extended_user.auth.IDPasswordlessAuth',
+    'extended_user.auth.EmailPasswordlessAuth',
+    'extended_user.auth.UsernamePasswordlessAuth',
+    "django.contrib.auth.backends.ModelBackend",
+
+]
+
 WSGI_APPLICATION = 'dosha_control.wsgi.application'
 
 
