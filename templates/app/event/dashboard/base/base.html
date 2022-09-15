@@ -1,0 +1,223 @@
+{% load static %}
+{% load widget_tweaks %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Spanish Link">
+        <!-- BEGINS description -->
+        <meta name="description" content="{% block description %}  {% endblock %}">
+        <!-- ENDS description -->
+        <!-- BEGINS Favicon -->
+        <link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/img/33laserie/logo-onel-vertical-mini.png' %}" />
+        <link rel="icon" href="{% static 'assets/img/33laserie/logo-onel-vertical-mini.png' %}" type="image/png">
+        <!-- ENDS Favicon -->
+        <!-- BEGINS title --> 
+        <title>{% block title %} {% endblock %}</title>
+        <!-- ENDS title -->
+        <!-- BEGINS STYLES -->
+        <!-- Argon CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/argon.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'assets/css/custom-styles.css' %}" type="text/css">
+         <!-- font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+        <!-- Icons -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+        <link rel="stylesheet" href="{% static 'assets/vendor/nucleo/css/nucleo.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'assets/vendor/fontawesome/fontawesome-free/css/all.min.css' %}" type="text/css">
+        <!-- ENDS STYLES -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src='https://www.googletagmanager.com/gtag/js?{{ gtag | safe}}'></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '{{ gtag | safe}}');
+        </script>
+    </head>
+    <!-- BEGINS BODY -->
+    <body>
+        <style>
+            .itemsContainer{float:left;position:relative}.itemsContainer:hover .play{display:block}.play{position:absolute;display:none;top:20%;width:40px;margin:0 auto;left:0;right:0;z-index:100}
+        </style>
+        <style>
+            .nav-link-text {
+                font-size: 16px;
+            }
+            .card-title {
+                font-size: 16px;
+            }
+        </style>
+        <style>
+            @font-face {
+                font-family: 'Avenir';
+                src: url('{% static 'assets/fonts/avenir/avenir-next-regular.woff' %}');
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'Avenir Bold';
+                src: url('{% static 'assets/fonts/avenir/avenir-next-bold.woff' %}');
+                font-weight: 800;
+                font-style: normal;
+            }
+            .btn-success {
+                background-color: #70e7b8 !important;
+                border-color: #70e7b8 !important;
+            }
+            body, html {
+                font-family: 'Avenir', sans-serif;
+                background-color: white !important;
+            }
+            .txt-bold {
+                font-family: 'Avenir Bold', sans-serif;
+                font-weight: 800;
+            }
+        </style>
+        <!-- Chromecast SDK -->
+            <script type="text/javascript" src="//www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+            <!-- THEOplayer library and css -->
+            <script type="text/javascript" src="https://cdn.myth.theoplayer.com/591eb373-a225-467e-9960-bbb2f5db6342/THEOplayer.js"></script>
+            <link rel="stylesheet" type="text/css" href="https://cdn.myth.theoplayer.com/591eb373-a225-467e-9960-bbb2f5db6342/ui.css" />
+            <!-- Customization Theoplayer css styles -->
+            <style>
+                .theo-primary-color,
+                .vjs-selected {
+                    color: #ffffff !important;
+                }
+                .theo-primary-background {
+                    color: #000000 !important;
+                    background-color: #4a90e2 !important;
+                }
+                .theo-secondary-color {
+                    color: #ffffff !important;
+                }
+                .theo-secondary-background {
+                    color: #000000 !important;
+                    background-color: #ffffff !important;
+                }
+                .theo-tertiary-color {
+                    color: #000000 !important;
+                }
+                .theo-tertiary-background {
+                    color: #ffffff !important;
+                    background-color: #000000 !important;
+                }
+                .vjs-play-control {
+                    display: none !important;
+                }
+            </style>
+        
+        <!-- BEGINS Main content -->
+        <div class="main-content" id="panel" style="background-color: black !important; background-size: 100%; background-attachment: fixed; background-position: center top; background-repeat: repeat-y;">
+            <!-- BEGINS navbar -->
+            {% include './navbar.html' %}
+            <!-- ENDS navbar -->
+            <!-- BEGINS dashboard header -->
+            {% include './dashboard-header.html' %}
+            <!-- ENDS dashboard header -->
+            <!-- BEGINS CONTENT-->
+            <div class="mt--6">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <!-- begins now 4 real -->
+                        <script type="text/javascript">
+                          window.now4real = window.now4real || {};
+                          now4real.config = {
+                            widget: {
+                              color_external_background: '#FF0202', color_external_text: '#000',
+                              color_internal_background: '#000', color_internal_text: '#646464',
+                                logo_url: 'https://33laserie.events.house/static/assets/img/chat.png',
+                                align: 'left',
+                                align_mobile: 'left',
+                                container: 'n4r-wrapper',
+                            }
+                          };
+                          (function () { var n4r = document.createElement('script'); n4r.type = 'text/javascript'; n4r.async = true; n4r.src = 'https://cdn.now4real.com/now4real.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(n4r, s); })();
+                        </script>
+            <!--ends now 4 real -->
+            <!-- ENDS CONTENT-->
+            <!-- BEGIN footer-->
+            {% include './footer.html' %}
+            <!-- END footer-->
+        </div>
+        <!-- ENDS Main content -->
+        <!-- BEGIN lang-->
+{#        {% include './languages.html' %}#}
+        <!-- END lang-->
+        <!-- BEGINS JS -->
+          <!-- Argon Scripts -->
+          <!-- Core -->
+          <script src="{% static 'assets/vendor/jquery/dist/jquery.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/js-cookie/js.cookie.js' %}"></script>
+          <script src="{% static 'assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js' %}"></script>
+          <!-- Optional JS -->
+          <script src="{% static 'assets/vendor/chart.js/dist/Chart.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/chart.js/dist/Chart.extension.js' %}"></script>
+          <script src="{% static 'assets/vendor/jvectormap-next/jquery-jvectormap.min.js' %}"></script>
+          <script src="{% static 'assets/js/vendor/jvectormap/jquery-jvectormap-world-mill.js' %}"></script>
+          <!-- Argon JS -->
+          <script src="{% static 'assets/js/argon.js' %}"></script>
+            <!--BEGINS timer-->
+            <script>
+            // var end = new Date('12/03/2021 05:25 PM');
+
+                var end = new Date('29/01/2022 1:00 PM');
+
+                var _second = 1000;
+                var _minute = _second * 60;
+                var _hour = _minute * 60;
+                var _day = _hour * 24;
+                var timer;
+
+                function showRemaining() {
+                    var now = new Date();
+                    var distance = end - now;
+                    if (distance < 0) {
+
+                        clearInterval(timer);
+                        //document.getElementById('countdown').innerHTML = 'INICIAMOS!';
+                        document.getElementById("countdown").style.display="none";
+                        //document.getElementById("showContent").style.display="none";
+                        document.getElementById("showContent").classList.remove('hideClass');
+                        return;
+                    }
+                    var days = Math.floor(distance / _day);
+                    var hours = Math.floor((distance % _day) / _hour);
+                    var minutes = Math.floor((distance % _hour) / _minute);
+                    var seconds = Math.floor((distance % _minute) / _second);
+
+                    //document.getElementById("countdown").innerHTML = "<img class=\"img-fluid\" src=\"../../../static/assets/img/natura/Arbol_Deskto.png\" style=\"position:absolute;left:0px;bottom:0px;\" />"
+                    document.getElementById('countdown').style.display="block";
+                    document.getElementById('countdown-text').innerHTML = "LA TRANSMISIÓN COMIENZA EN:";
+                    //document.getElementById('countdown-hour1').innerHTML = days + ' dias, ';
+                    //document.getElementById('countdown-hour1').innerHTML += hours + ' horas, ';
+                    //document.getElementById('countdown-hour1').innerHTML += minutes + ' minutos y ';
+                    //document.getElementById('countdown-hour1').innerHTML += seconds + ' segundos';
+
+                    function minTwoDigits(n) {
+                      return (n < 10 ? '0' : '') + n;
+                    }
+
+                    document.getElementById('days').innerHTML = minTwoDigits(days);
+                    document.getElementById('hours').innerHTML = minTwoDigits(hours);
+                    document.getElementById('minutes').innerHTML = minTwoDigits(minutes);
+                    document.getElementById('seconds').innerHTML = minTwoDigits(seconds);
+
+                }
+
+                timer = setInterval(showRemaining, 1000);
+            </script>
+        <!--ENDS timer-->
+        <!-- ENDS JS -->
+    </body>
+    <!-- ENDS BODY -->
+</html>

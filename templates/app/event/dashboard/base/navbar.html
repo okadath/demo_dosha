@@ -1,0 +1,107 @@
+{% load static %}
+{% load widget_tweaks %}
+<!--
+    BEGINS Navbar
+-->
+    <nav class="navbar navbar-top navbar-expand navbar-light p-0" style="background-color: rgba(75,75,75, 0.5);">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Brand logo -->
+            <img class="img-fluid py-2" id="nav-logo-img" src="{% static 'assets/img/33laserie/logo-onel-vertical-mini.png' %}" style="max-height: 70px;">
+            <style>
+                @media (max-width: 400px) {
+                  #nav-logo-img {
+                    max-height: 50px !important;
+                  }
+                    .speaker-img {
+
+                    }
+                }
+            </style>
+            <h2 HIDDEN class=" d-none d-md-block text-white">&nbsp;&nbsp;{% if lobby_message %}{{ lobby_message }}{% else %}<span hidden>Spanish Link</span>{% endif %} </h2>
+            <!-- BEGINS SEARCH -->
+            <!-- Search form -->
+            {% include './navbar-search.html' %}
+            <!-- ENDS SEARCH -->
+            <!-- Begins Navbar links -->
+            <ul class="navbar-nav align-items-center mr-auto ml-sm-auto" style="padding-left: 18%;">
+              <li class="nav-item active d-none d-sm-block">
+                  <a class="nav-link text-white" href="http://137.184.4.252/event/room/spanish-link/main">Inicio</a>
+              </li>
+                <li class="nav-item active d-none d-sm-block">
+                  <a class="nav-link text-white" href="http://137.184.4.252/event/speaker/spanish-link/">Presentadores</a>
+              </li>
+              <li HIDDEN class="nav-item active d-none d-sm-block">
+                  <a HIDDEN class="nav-link text-white" href="">Patrocinadores</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white d-none d-sm-block" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Contenido Extra</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="" target="_blank">Si estás en México</a>
+                  <a class="dropdown-item" href="" target="_blank">Si estás en USA</a>
+                    <a class="dropdown-item" href="" target="_blank">Si estás en Latinoamérica</a>
+                </div>
+              </li>
+            </ul>
+          <ul class="navbar-nav align-items-center ml-md-auto">
+              <!--
+              BEGINS NOTIFICATIONS MENU
+              -->
+              {% include './navbar-notifications.html' %}
+              <!--
+              ENDS NOTIFICATIONS MENU
+              -->
+              <!--
+              BEGINS MINI ICON MENU
+              -->
+              {% include './navbar-shortcuts.html' %}
+              <!--
+              ENDS MINI ICON MENU
+              -->
+          </ul>
+          <ul class="navbar-nav align-items-center ml-auto ml-md-0">
+              <!--
+              BEGINS LANGUAGES
+              -->
+              {% include './navbar-languages.html' %}
+              <!--
+              ENDSS LANGUAGES
+              -->
+              <li HIDDEN class="nav-item small d-none d-md-block">
+                                                    <a HIDDEN class="nav-link mb-sm-3 mb-md-0 active text-white small"
+                                                       id="tabs-icons-player1-tab"
+                                                       style="background-color: rgba(75,75,75,0.0);"
+                                                       data-toggle="tab" href="#tabs-icons-player1" role="tab"
+                                                       aria-controls="tabs-icons-player1"
+                                                       aria-selected="true"><i class="ni ni-button-play"></i>Player
+                                                        1</a>
+                                                </li>
+              <li class="nav-item small d-none d-md-block">
+                                                    <a class="nav-link mb-sm-3 mb-md-0 text-white small"
+                                                       id="tabs-icons-player2-tab" data-toggle="tab"
+                                                       style="background-color: rgba(75,75,75,0.0);"
+                                                       href="#tabs-icons-player2" role="tab"
+                                                       aria-controls="tabs-icons-player2"
+                                                       aria-selected="false"><i
+                                                            class="ni ni-button-play"></i>  Alternative Player </a>
+                                                </li>
+              <li class="nav-item small d-none d-lg-block">
+                                                    <a class="nav-link mb-sm-3 mb-md-0 active text-white small"
+                                                       id="refresh-player"
+                                                       style="background-color: rgba(75,75,75,0.0);"
+                                                       href="#"><i class="ni ni-curved-next"></i>  Recargar Player</a>
+                                                </li>
+              <!--
+              BEGINS USER DROPDOWN MENU
+              -->
+              {% include './navbar-user.html' %}
+              <!--
+              ENDSS USER DROPDOWN MENU
+              -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+<!--
+    ENDS Navbar
+-->

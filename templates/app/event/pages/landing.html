@@ -1,0 +1,466 @@
+{% extends './base/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %} Spanish Link {% endblock %}
+{% block description %} Bienvenidos a Spanish Link {% endblock %}
+{% block content %}
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <script>
+        window.scroll({
+            top: 2500,
+            left: 0,
+            behavior: 'smooth'
+        });
+    </script>
+    <div class="page-header register-page header-filter" filter-color="black" style=" padding-bottom: 50px;">
+        <div class="container">
+            <div class="row">
+                <div class="ml-auto mr-auto m-4">
+                    <div class="card card-login card-hidden shadow-none"
+                         style="background-color: rgba(0,0,0,0); border: none;">
+                        <div class="card-body text-center" style="background-color: rgba(0,0,0,0); border: none;">
+                            <h3 HIDDEN class="card-title">Bienvenidos</h3>
+                            <br HIDDEN>
+                            <br>
+                            <br>
+                            <img class="img-fluid p-0 " src="{% static 'assets/img/33laserie/logo33_plateado.png' %}"
+                                 style="max-height: 100px;">
+                            <br>
+                            <br>
+                            <img HIDDEN class="img-fluid p-3"
+                                 src="{% static 'assets/img/33laserie/title_txt_short.png' %}"
+                                 style="max-height: 150px;">
+
+                            <br>
+                            <h1 class="text-white txt-bold" style="font-size: 2.5rem">ACOMPÁÑANOS AL LANZAMIENTO
+                                MUNDIAL</h1>
+                            <br>
+                            <br>
+                                <a href="#register" class="btn text-white font-weight-bold bg-danger mb-5"
+                                   style="font-size: 2.3rem; border-radius: 100px; background-color: #ff0029; border-color: #ff0029;">
+                                    REGÍSTRATE AQUÍ
+                                </a>
+                                {% if control.allow_login %}
+                                <h1 class="text-white txt-bold">Si ya realizaste tu registro
+                                <br>
+                                <u>Da <a href="https://33laserie.events.house/login" class="text-white">Click Aquí para Ingresar</a></u></h1>
+                                {% endif %}
+                                <br>
+                            <br>
+                            <br>
+                            <!-- BEGINS video-->
+                            <div style="padding:56.25% 0 0 0;position:relative;">
+                                <iframe src="https://player.vimeo.com/video/391161290?h=223dd747bf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                                        style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                                        title="33_SEC_OF_33"></iframe>
+                            </div>
+                            <script src="https://player.vimeo.com/api/player.js"></script>
+                            <!-- ENDS video -->
+                            <!-- BEGINS timer -->
+                            <center>
+                                <div id="countdown" class="row text-center text-white" style="padding-top: 70px; ">
+                                    <h1 hidden class="text-white" style="font-size: 2.3rem;">
+                                        27 de enero 2022.<br>19:00 hrs (Hora Central)
+                                    </h1>
+                                    <br>
+                                    <center>
+                                        <img class="img-fluid p-0 "
+                                             src="{% static 'assets/img/33laserie/fecha-txt.png' %}"
+                                             style="max-height: 150px;"/>
+                                    </center>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <div class="col-lg-12 mx-auto" style="border: 0px solid white; border-radius: 0">
+                                        <br HIDDEN>
+                                        <h1 HIDDEN id="countdown-text" class="text-white text-bold"></h1>
+                                        <h1 id="countdown-hour1" class="text-white">
+                                        </h1>
+                                        <h1 id="countdown-hour" class="text-white" style="font-size: 3rem;">
+                                            <span id="days" class="text-white hour"></span>
+                                            :
+                                            <span id="hours" class="text-white hour"></span>
+                                            :
+                                            <span id="minutes" class="text-white hour"></span>
+                                            :
+                                            <span id="seconds" class="text-white hour"></span>
+                                        </h1>
+                                        <div id="countdown-legend" style="">
+                        <span id="days-text" class="text-white hour"
+                              style="margin-left: 8%; padding-left: 30px; padding-right: 50px">Días</span>
+                                            <span id="hours-text"
+                                                  class="text-white hour"
+                                                  style="padding-right: 60px; padding-left: 50px;">Horas</span>
+                                            <span id="minutes-text" class="text-white hour"
+                                                  style="padding-right: 60px; padding-left: 50px;">Minutos</span>
+                                            <span id="seconds-text" class="text-white hour"
+                                                  style="padding-right: 40px; padding-left: 30px;">Segundos</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                            </center>
+                            <style>
+
+                                @media (min-width: 900px) {
+                                    #countdown-hour {
+                                        font-size: 5rem !important;
+                                    }
+
+                                    #days-text, #hours-text, #minutes-text, #seconds-text {
+                                        font-size: 1.5rem !important;
+                                        padding-right: 20px !important;
+                                        padding-left: -20px !important;
+                                    }
+
+                                    #days-text {
+                                        margin-left: -20%;
+                                    }
+
+                                }
+
+                                @media (max-width: 768px) {
+                                    #countdown-hour {
+                                        font-size: 3rem !important;
+                                    }
+
+                                    #days-text {
+                                        margin-left: -100px;
+                                    }
+
+                                    #days-text, #hours-text, #minutes-text, #seconds-text {
+                                        font-size: 0.8rem !important;
+                                        padding-right: 20px !important;
+                                        padding-left: 15px !important;
+                                    }
+
+                                }
+
+                                @media (max-width: 490px) {
+                                    #countdown-hour {
+                                        font-size: 2.3rem !important;
+                                    }
+
+                                    #days-text {
+                                        margin-left: -100px;
+                                    }
+
+                                    #days-text, #hours-text, #minutes-text, #seconds-text {
+                                        font-size: 0.5rem !important;
+                                        padding-right: 20px !important;
+                                        padding-left: 15px !important;
+                                    }
+
+                                }
+
+                                @media (max-width: 320px) {
+                                    #countdown-hour {
+                                        font-size: 1.5rem !important;
+                                    }
+
+                                    #days-text {
+                                    }
+
+                                    #days-text, #hours-text, #minutes-text, #seconds-text {
+                                        font-size: 0.5rem !important;
+                                        padding-right: 10px !important;
+                                        padding-left: 0px !important;
+                                    }
+
+                                }
+
+                            </style>
+                            <!-- copy -->
+                            <br>
+                            <br>
+                            <h1 class="text-white text-left">Qué es Spanish Link?</h1>
+                            <div class="bg-white" style="width: 265px; height: 3px; margin-left: -5px;"></div>
+                            <br>
+                            <div class="row px-3 text-justify justify-content-around align-items-center">
+                                <h1 class="col-12 col-sm-3 text-white text-center italic">
+                                    <i>
+                                        La historia de un hombre y su camino hacía la realización de una hombría
+                                        auténtica.
+                                    </i>
+
+                                </h1>
+                                <div class="col-12 col-sm-8 p-4">
+                                    <h3 class="text-white txt-bold">
+                                        Ayuda a los hombres de tu congregación y comunidad a convertirse en líderes de
+                                        sus familias y en fuertes colaboradores en sus iglesias y equipos de trabajo,
+                                        incluso si ya lo has intentado antes sin mucho éxito.
+                                    </h3>
+                                    <br>
+                                    <h3 class="text-white">
+                                        Únete y acompáñanos al estreno mundial de Spanish Link en Español.
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <b class="txt-bold">Esta es la serie de videos que ha transformado la vida de
+                                            cientos de miles de hombres durante la última década en todo el mundo.</b>
+                                        <br>
+                                        <br>
+                                        Y ahora, han sido desarrollados, escritos y producidos especialmente para
+                                        nuestra audiencia en Español.
+                                    </h3>
+                                    <br>
+                                    <br>
+                                    <h3 class="text-white text-justify">
+                                        Spanish Link es un recorrido a través de diferentes aspectos relacionados con una
+                                        hombría auténtica que te ayudarán a:
+                                        <br>
+                                        <br>
+                                        <b style="font-weight: 500">
+                                            - Descubrir tu verdadero llamado.
+                                            <br>
+                                            - Perdonar las heridas de tu pasado.
+                                            <br>
+                                            - Comprender cómo funciona tu mente.
+                                            <br>
+                                            - Identificar la “herida materna" y  la “herida paterna" y aprender cómo sanarlas.
+                                            <br>
+                                        </b>
+                                        <br>
+                                        <br>
+                                        Sé parte de este gran estreno mundial y durante una hora descubre este valioso
+                                        recurso en compañía de Steve Snider, co-fundador de Authentic Manhood, y de los
+                                        líderes Ps. Carlos Conteras y Ps. Haníbal Rodríguez.
+                                    </h3>
+                                    <br>
+                                    <h3 class="text-white text-justify">
+                                        Queremos que seas el primero en unirte a nosotros en este increíble viaje para
+                                        rescatar las vidas de los hombres en nuestras iglesias y comunidades.
+                                        <br>
+                                        <br>
+                                    </h3>
+                                    <b class="txt-bold text-center text-white">Regístrate ahora para asegurar tu lugar
+                                        ya que el cupo es limitado.</b>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <h1 class="text-white text-left">Presentadores</h1>
+                            <div class="bg-white" style="width: 265px; height: 3px; margin-left: -5px;"></div>
+                            <br>
+                            <div class="row px-0 text-left justify-content-around">
+                                <div style="width: 255px;" class="mb-5">
+                                    <img class="img-fluid mb-3"
+                                         src="{% static 'assets/img/33laserie/speakers-steve.jpg' %}"/>
+                                </div>
+                                <div class="col-lg-8">
+                                    <p class="text-white text-justify" style="margin-bottom: 145px;">
+                                        <span class="txt-bold">
+                                           STEVE SNIDER
+                                        </span>
+                                        <br><small><i>Co – Fundador de «Hombría Auténtica (Authentic
+                                        Manhood)</i></small>
+                                        <br><br>
+                                        <small class="">
+                                            Todo equipo necesita un entrenador, para Authentic Manhood, ese es Steve
+                                            Snider.
+                                            Creador de Spanish Link and Men’s Fraternity, cuando no está trabajando en la
+                                            creación de nuevos recursos de Authentic Manhood o haciendo ejercicio en D1
+                                            Sports Training, seguramente puedes encontrarlo junto a su hermosa esposa,
+                                            Beth.
+                                        </small>
+                                    </p>
+                                </div>
+                                <div style="width: 255px;" class="mb-7">
+                                    <img class="img-fluid mb-3"
+                                         src="{% static 'assets/img/33laserie/speakers-carlos.jpg' %}"/>
+                                </div>
+                                <div class="col-lg-8">
+                                    <p class="text-white text-justify">
+                                        <span class="txt-bold">
+                                           CARLOS CONTRERAS
+                                        </span>
+                                        <br><small><i>Pastor principal de la «Iglesia Gracia Soberana» de Cd. Juárez,
+                                        Chihuahua, México.</i></small>
+                                        <br><br>
+                                        <small class="text-justify">
+                                            Se inició en el mundo de la construcción industrial al graduarse como
+                                            ingeniero civil de la Universidad de Texas. En 1990 dejó el mundo
+                                            empresarial con el objetivo de estudiar para el ministerio pastoral. Desde
+                                            entonces, ha servido tiempo completo por 29 años como pastor líder de la
+                                            «Iglesia Gracia Soberana» de Cd. Juárez, Chihuahua, México. Es también
+                                            fundador del ministerio «Fieles a Su llamado», el cual tiene la visión de
+                                            edificar a pastores y líderes en Latinoamérica.
+                                            Es instructor de los talleres: Simeon Trust y miembro del consejo pastoral
+                                            de «Coalición por el evangelio». Está casado con Kena desde hace 37 años, es
+                                            papá de 4 hijos adultos y abuelo de 5 hermosos nietos. Carlos disfruta del
+                                            buen café, los buenos libros y los recorridos por el desierto en su
+                                            bicicleta de montaña.
+                                        </small>
+                                        <br class="d-block d-sm-none">
+                                        <br class="d-block d-sm-none">
+                                        <br class="d-block d-sm-none">
+                                    </p>
+                                </div>
+                                <div style="width: 255px;">
+                                    <img class="img-fluid"
+                                         src="{% static 'assets/img/33laserie/speakers-hannibal.jpg' %}"/>
+                                    <br class="d-block d-sm-none">
+                                    <br class="d-block d-sm-none">
+                                    <br class="d-block d-sm-none">
+                                </div>
+                                <div class="col-lg-8">
+                                    <p class="text-white text-justify">
+                                        <span class="txt-bold">
+                                           HANÍBAL RODRÍGUEZ
+                                        </span>
+                                        <br><small><i>Pastor principal en Wheaton Bible Church, Chicago, Estados
+                                        Unidos</i></small>
+                                        <br><br>
+                                        <small>
+                                            Ha estado casado con su esposa Heidi desde 2001con quien tiene dos hijas
+                                            Camila y Alejandra. Es un predicador talentoso que comparte apasionadamente
+                                            la Palabra de Dios. Cree que el Evangelio de Jesucristo debe ser la base de
+                                            todo lo que hacemos, es graduado de Northeastern University, donde recibió
+                                            su licenciatura y maestría en educación, y tiene una maestría en teología
+                                            del Covenant Theological Seminary.
+                                        </small>
+                                    </p>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <a href="#wufoo-z1r9j8sm1ofkz3t" role="button" aria-expanded="false"
+                               aria-controls="wufoo-z1r9j8sm1ofkz3t"
+                               class="btn text-white font-weight-bold bg-danger mb-4"
+                               style="font-size: 2.2rem; border-radius: 100px; background-color: #ff0029; border-color: #ff0029;">
+                                REGÍSTRATE AQUÍ
+                            </a>
+                        {% if control.allow_login %}
+                            <h1 class="text-white txt-bold">Si ya realizaste tu registro
+                                <br>
+                                <u>Da <a href="https://33laserie.events.house/login" class="text-white">Click Aquí para Ingresar</a></u></h1>
+                        {% endif %}
+                            <br>
+                            <br>
+                            <!-- showContent -->
+                            <div id="showContent" class="hideClass">
+                                <div class="row">
+                                </div>
+                            </div>
+                            <!-- ENDS timer -->
+                            <!-- BEGINS form -->
+                            <a id="register"></a>
+                            <div id="wufoo-z1r9j8sm1ofkz3t"> Fill out my <a
+                                    href="https://glsnow.wufoo.com/forms/z1r9j8sm1ofkz3t">online form</a>.
+                            </div>
+                            <script type="text/javascript"> var z1r9j8sm1ofkz3t;
+                            (function (d, t) {
+                                var s = d.createElement(t), options = {
+                                    'userName': 'glsnow',
+                                    'formHash': 'z1r9j8sm1ofkz3t',
+                                    'autoResize': true,
+                                    'height': '931',
+                                    'async': true,
+                                    'host': 'wufoo.com',
+                                    'header': 'show',
+                                    'ssl': true
+                                };
+                                s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'secure.wufoo.com/scripts/embed/form.js';
+                                s.onload = s.onreadystatechange = function () {
+                                    var rs = this.readyState;
+                                    if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+                                    try {
+                                        z1r9j8sm1ofkz3t = new WufooForm();
+                                        z1r9j8sm1ofkz3t.initialize(options);
+                                        z1r9j8sm1ofkz3t.display();
+                                    } catch (e) {
+                                    }
+                                };
+                                var scr = d.getElementsByTagName(t)[0], par = scr.parentNode;
+                                par.insertBefore(s, scr);
+                            })(document, 'script'); </script>
+                            <!-- ENDS form -->
+                            <!-- register control -->
+                            {% if user.is_authenticated %}
+                                <div class="container alert alert-success">
+                                    <center>
+                                        <strong> Muchas gracias por volver con nosotros {{ user.email }}<br>
+                                            {% autoescape off %}
+                                                {{ control.mess_landing_acceso }}
+                                            {% endautoescape %}
+                                        </strong>
+                                    </center>
+                                </div>
+                            {% endif %}
+                            {% if control.allow_register %}
+                                <hr class="mb-3">
+                                <small>¿Aún no te registras para asistir al evento?</small>
+                                <br>
+                                <a href="{% url 'register' %}" class="btn btn-warning  mt-4">Da click aquí para
+                                    Registrarte</a>
+                                <br>
+                                <br>
+                            {% endif %}
+                            <br>
+                            <hr style="color:white; border: 1px solid white;">
+                            <br>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img class="img-fluid" style="max-height: 70px"
+                                         src="{% static 'assets/img/33laserie/Lifewaylogo__RGB_white_LIGHTshadow.png' %}"/>
+                                </div>
+                                <div class="col-lg-6">
+                                    <img class="img-fluid" style="max-height: 80px"
+                                         src="{% static 'assets/img/33laserie/AManhood_white.png' %}"/>
+                                </div>
+                                <div class="col-lg-4" HIDDEN>
+                                    <img class="img-fluid" style="max-height: 80px"
+                                         src="{% static 'assets/img/33laserie/logo-AGroup.jpg' %}"/>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="card-footer justify-content-center pt-1"
+                                 style="background-color: rgba(0,0,0,0); border: none;">
+                                <div hidden>
+                                    <!-- login control -->
+                                    {% if control.allow_login %}
+                                        <a href="{% url 'login' %}" class="btn btn-warning  mt-4">Ingresa con tu correo
+                                            electrónico</a>
+                                        <br>
+                                    {% else %}
+                                        <br>
+                                        <br>
+                                        <span>Si todavia no tienes tu entrada,  <a
+                                                href="https://glsnow.wufoo.com/forms/zty9l3407mr69z/" target="_blank">Da click Aquí</a></span>
+                                        <br>
+                                        <br>
+                                        <h2>
+                                            {% autoescape off %}
+                                                {{ control.mess_landing_acceso }}
+                                            {% endautoescape %}
+                                        </h2>
+                                    {% endif %}
+                                    <br>
+                                </div>
+                                <small class="text-white">
+                                    Al hacer uso de la plataforma se aceptan las <a
+                                        class="font-weight-bold text-primary" target="_blank"
+                                        href="{% static 'assets/AvisodePrivacidad-OneL.pdf' %}"><u class="text-white">Políticas
+                                    de
+                                    Privacidad</u></a> de la misma.
+                                </small></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

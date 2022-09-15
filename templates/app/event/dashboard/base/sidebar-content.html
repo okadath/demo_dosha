@@ -1,0 +1,122 @@
+{% load static %}
+<!-- BEGINS CONTENT NAVBAR -->
+        <style>
+            .nav-link-text {
+                font-size: 14px;
+            }
+        </style>
+        <ul class="navbar-nav" style="margin-top: -20px">
+
+            <li class="nav-item" HIDDEN>
+            <a class="nav-link" href="{% url 'see_event' event.slug  %}">
+              <i class="fa fa-home text-dark"></i>
+              <span class="nav-link-text"> Lobby </span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'room' event.slug "main" %}">
+              <i class="fa fa-home text-dark"></i>
+              <span class="nav-link-text"> Sala Principal </span>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'Program'  event.slug  %}">
+              <i class="ni ni-single-copy-04 text-dark"></i>
+              <span class="nav-link-text"> Programa </span>
+            </a>
+          </li>
+          <li class="nav-item" HIDDEN>
+            <a class="nav-link" href="{% url 'rooms'  event.slug  %}">
+              <i class="fa fa-th-large text-dark"></i>
+              <span class="nav-link-text"> Rooms </span>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'speakers'  event.slug  %}">
+              <i class="fa fa-user text-dark"></i>
+              <span class="nav-link-text"> Conferencistas </span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a HIDDEN class="nav-link" href="{% url 'recursos'  event.slug  %}">
+              <i class="fa fa-folder text-dark"></i>
+              <span class="nav-link-text"> Recursos </span>
+            </a>
+          </li>
+          <li hidden class="nav-item " HIDDEN>
+            <a class="nav-link" href="{% url 'notes'  event.slug  %}">
+              <i class="fa fa-file text-dark"></i>
+                <span class="nav-link-text"> Notas </span>
+            </a>
+          </li>
+          <!-- recien agregado -->
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'sponsors' event.slug %}">
+                <i class="ni ni-building text-dark"></i>
+                <span class="nav-link-text">Patrocinadores</span>
+            </a>
+          </li>
+          <li HIDDEN class="nav-item ">
+            <a HIDDEN class="nav-link" href="{% url 'supportspiritual' event.slug %}">
+              <i class="material-icons text-dark">pan_tool</i>
+                <span class="nav-link-text">Peticiones de Oración</span>
+            </a>
+          </li>
+            <li HIDDEN class="nav-item ">
+            <a HIDDEN class="nav-link" href="https://www.paypal.com/donate?hosted_button_id=NAX3QUMY62RMG" target="_blank">
+              <i class="fa fa-money-bill text-dark"></i>
+                <span class="nav-link-text" style="font-size: 12px;">Tu Donativo para La Cumbre</span>
+            </a>
+          </li>
+          <li hidden class="nav-item ">
+            <a class="nav-link" href="{% url 'teamedition' event.slug  %}">
+              <i class="fa fa-users text-dark"></i>
+                <span class="nav-link-text">Team Edition</span>
+            </a>
+          </li>
+            <!--
+            VENTANAS DE DONATIVOS
+            -->
+            <li id="linkDonativoMexicoNorte" class="nav-item">
+              <a class="nav-link" href="https://www.paypal.com/donate/?hosted_button_id=NAANPZJ3A3DY6" target="_blank">
+                <i class="fa fa-money-bill text-dark"></i>
+                <span class="nav-link-text">Donativos</span>
+              </a>
+            </li>
+            <!-- -->
+
+            <!--
+            LINKS DE CGL 2021
+            -->
+            <li id="linkEventosLaCumbre" class="nav-item">
+              <a class="nav-link" href="https://surveyhero.com/c/m47qgmgf﻿" TARGET="_blank">
+                <i class="fa fa-globe text-dark"></i>
+                <span class="nav-link-text font-weight-bold">Responde la Encuesta</span>
+              </a>
+            </li>
+            <li id="linkEventosLaCumbre" class="nav-item">
+              <a class="nav-link" href="https://glsnow.s3.us-west-2.amazonaws.com/Resources/EventsHouse/Cuaderno+Digital+CGL+Durango+2021.pdf" TARGET="_blank">
+                <i class="fa fa-globe text-dark"></i>
+                <span class="nav-link-text font-weight-bold">Cuaderno del Congresista</span>
+              </a>
+            </li>
+            <li id="linkEventosLaCumbre" class="nav-item">
+              <a class="nav-link" href="https://glsnow.app/spa/landing" TARGET="_blank">
+                <i class="fa fa-play-circle text-dark"></i>
+                <span class="nav-link-text font-weight-bold">Conoce GLSNow</span>
+              </a>
+            </li>
+            <li HIDDEN id="linkEventosLaCumbre" class="nav-item">
+              <a class="nav-link" href="https://lacumbreshop.com/products/pre-venta-inscripcion-cumbre-global-de-liderazgo-cancun-2022" TARGET="_blank">
+                <i class="fa fa-calendar text-dark"></i>
+                <span class="nav-link-text font-weight-bold" style="font-size: 12px;">Preventa CGL Cancún 2022</span>
+              </a>
+            </li>
+            <li class="nav-item" style="bottom: 0">
+            <a class="nav-link" href="{% url 'support' event.slug %}">
+              <i class="fa fa-life-ring text-dark"></i>
+                <span class="nav-link-text">Soporte </span>
+            </a>
+          </li>
+        </ul>
+<!-- BEGINS CONTENT NAVBAR -->

@@ -1,0 +1,137 @@
+{% extends './base/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %} Login {% endblock %}
+{% block description %} Bienvenidos a Spanish Link {% endblock %}
+{% block content %}
+    <!--
+    BEGINS CONTENT
+    -->
+    <div class="page-header register-page header-filter" filter-color="black" style=" padding-bottom: 50px;">
+      <div class="container">
+      <br>
+        <div class="row">
+          <div class="col-lg-7 col-md-6 col-sm-8 ml-auto mr-auto m-4">
+            <form class="form" method="POST" action= "{% url 'login' %}">
+              {% csrf_token %}
+              <div class="card card-login card-hidden p-0" style="background-color: rgba(75,75,75,0);">
+                <div class="card-header card-header-danger text-center" style="background-color: rgba(75,75,75,0.1);">
+                    <h1 class="card-title text-white">Bienvenidos</h1>
+                    <img HIDDEN class="img-fluid p-0 m--2" src="https://www.redviva.com/lacumbreglobal/wp-content/uploads/sites/2/2019/10/logo.png">
+                    <img class="img-fluid p-0" src="{% static 'assets/img/33laserie/banner-onel.png' %}" style="max-height: 300px;">
+                    <br>
+                    <br>
+                    <br>
+                    <p class="text-white">
+                        Para ingresar al evento ingresa el <b>correo electrónico</b> con el que te registraste.
+                        <br>
+                        Si necesitas ayuda, da click en el boton de Soporte.
+                        <a hidden href="" data-toggle="modal" data-target="#exampleModal"><span style="background-color: #2696C2; padding:0 6px; border-radius: 30%; color: white;">&#63;</span></a>
+                    </p>
+                </div>
+                  {% if error_messages %}
+                      <br>
+                        <div class="alert alert-warning">
+                        {% autoescape off %}
+                            <center>
+                            <strong>{{mail}}<br>{{ error_messages }}</strong>
+                            </center>
+                        {% endautoescape %}
+                        </div>  
+                        {% endif %}
+                  {% if time_messages %}
+                      <br>
+                        <div class="alert alert-warning" center>
+                            <strong>{{ time_messages }}</strong>
+                        </div>  
+                        {% endif %}
+                <div class="card-body ">
+                  <span class="bmd-form-group">
+                  </span>
+                  <span class="bmd-form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                              <i class="material-icons">lock</i>
+                        </span>
+                      </div>
+                      <!-- <input type="email" class="form-control" placeholder="Email"> -->
+                      <input  name="email" id="id_email" class="form-control" placeholder="Correo Electrónico" required>
+                    </div>
+                  </span>
+                    <br>
+<!--                   <span class="bmd-form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="material-icons">mail</i>
+                        </span>
+                      </div>
+                      <input type="text" name="password" required id="id_password" placeholder="Email" class="form-control" required>
+                    </div>
+                  </span> -->
+                    <center>
+                        <button  class="btn btn-danger mt-1" type="submit"> Ingresar </button>
+                    </center>
+
+                                  {% if error_messages %}
+                                      <center>
+                                      <a HIDDEN href= "{% url 'register' %}" class="btn btn-lg btn-success">Click here to Register today</a>
+                                      <br>
+                                      <br>
+                                      </center>
+
+                        {% endif %}
+                </div>
+                <div class="card-footer justify-content-center" style="background-color: rgba(75,75,75,0.1);">
+                  <!-- ponerle type="submit" es importante! -->
+                       <!--  <a href="#pablo" class="btn btn-danger mt-4">INGRESAR</a> -->
+
+
+                  <!-- ponerle type="submit" es importante! -->
+                       <!--  <a href="#pablo" class="btn btn-danger mt-4">INGRESAR</a> -->
+                    <center>
+                        <small class="text-white">
+                            Al hacer uso de la plataforma se aceptan las <a class="font-weight-bold text-primary" target="_blank" href="{% static 'assets/AvisodePrivacidad-OneL.pdf' %}"><u>Políticas de Privacidad</u></a> de la misma.
+                        </small>
+                        <br>
+                        <br>
+                        <span hidden>
+                            Si todavia no tienes tu entrada,  <a href="https://glsnow.wufoo.com/forms/zty9l3407mr69z/" target="_blank">Da click Aquí</a>
+                        </span>
+                                 <br hidden>
+                    </center>
+                </div>
+              </div>
+            <br>
+            <br>
+            <br>
+            </form>
+          </div>
+            </div>
+          </div>
+        </div>
+        <!--modal-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ejemplo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img class="img-fluid" src="{% static 'assets/img/ejemplo-pedido-2.jpeg' %}">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    <!--
+    ENDS CONTENT
+    -->
+{% endblock %}

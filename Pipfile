@@ -8,6 +8,7 @@ django = "==3.2.15"
 weasyprint = "*"
 bleach = "*"
 django-import-export = "*"
+django-widget-tweaks = "*"
 
 [dev-packages]
 

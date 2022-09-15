@@ -1,0 +1,51 @@
+{% extends './base/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %} Spanish Link {% endblock %}
+{% block description %} Bienvenidos a Spanish Link {% endblock %}
+{% block content %}
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <script>
+        window.scroll({
+            top: 2500,
+            left: 0,
+            behavior: 'smooth'
+        });
+    </script>
+    <div class="page-header register-page header-filter" filter-color="black" style=" padding-bottom: 50px;">
+        <div class="container">
+            <div class="row">
+                <div class="ml-auto mr-auto col-lg-12" style="min-height: 400px;">
+                    <div class=""
+                         style="background-color: rgba(0,0,0,0); border: none;">
+                        <div class="text-center" style="background-color: rgba(0,0,0,0); border: none;">
+                            <p>&#160&#160&#160</p>
+                            <div class="d-sm-none">
+                                <br>
+                                <br>
+                            </div>
+                            <div id="wufoo-zp5nxuk1dg6p44" class="col-lg-12"> Fill out my <a href="https://glsnow.wufoo.com/forms/zp5nxuk1dg6p44">online form</a>. </div> <script type="text/javascript"> var zp5nxuk1dg6p44; (function(d, t) { var s = d.createElement(t), options = { 'userName':'glsnow', 'formHash':'zp5nxuk1dg6p44', 'autoResize':true, 'height':'1404', 'async':true, 'host':'wufoo.com', 'header':'show', 'ssl':true }; s.src = ('https:' == d.location.protocol ?'https://':'http://') + 'secure.wufoo.com/scripts/embed/form.js'; s.onload = s.onreadystatechange = function() { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { zp5nxuk1dg6p44 = new WufooForm(); zp5nxuk1dg6p44.initialize(options); zp5nxuk1dg6p44.display(); } catch (e) { } }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script'); </script>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+  </script>
+    <script>
+        function scrollToTop() {
+            $(window).scrollTop(0);
+        }
+        setTimeout(scrollToTop, 3500);
+    </script>
+{% endblock %}

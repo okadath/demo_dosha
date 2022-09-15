@@ -1,0 +1,89 @@
+{% load static %}
+<!--
+BEGINS PROFILE DROPDOWN MENU
+-->
+<li class="nav-item dropdown">
+    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="media align-items-center">
+                  <span HIDDEN class="avatar avatar-sm rounded-circle">
+                    <img alt="Image placeholder" src="{% static 'assets/img/33laserie/logo-onel-vertical-mini.png' %}">
+                  </span>
+            <div class="media-body ml-2">
+                <div class="sidenav-toggler-inner">
+                    <i class="sidenav-toggler-line bg-white"></i>
+                    <i class="sidenav-toggler-line bg-white"></i>
+                    <i class="sidenav-toggler-line bg-white"></i>
+                </div>
+            </div>
+        </div>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right">
+        <div class="d-block d-sm-none">
+            <a href="http://137.184.4.252/event/room/spanish-link/main" class="dropdown-item highlight">
+                <i class="ni ni-ungroup"></i>
+                <span class="mr-4">Inicio</span>
+            </a>
+            <a href="http://137.184.4.252/event/speaker/spanish-link/"
+               class="dropdown-item highlight">
+                <i class="ni ni-single-02"></i>
+                <span class="mr-4">Presentadores</span>
+
+            </a>
+            <hr class="py-x my-0">
+            <a href=""
+               class="dropdown-item highlight">
+                <span class="mr-4">Contenido Extra</span>
+            </a>
+            <a href="" target="_blank"
+               class="dropdown-item highlight">
+                <i class="ni ni-shop"></i>
+                <span class="mr-4">Si estás en México</span>
+
+            </a>
+            <a href="" target="_blank"
+               class="dropdown-item highlight">
+                <i class="ni ni-shop"></i>
+                <span class="mr-4">Si estás en USA</span>
+            </a>
+            <a href="" target="_blank"
+               class="dropdown-item highlight">
+                <i class="ni ni-shop"></i>
+                <span class="mr-4">Si estás en Latinoamérica</span>
+            </a>
+            <hr class="py-x my-0">
+        </div>
+        <div HIDDEN class="dropdown-header noti-title">
+            <h6 class="text-overflow m-0">Bienvenido!</h6>
+        </div>
+        <a hidden href="" class="dropdown-item">
+            <i class="ni ni-single-02"></i>
+            <span>Perfil</span>
+        </a>
+        <a HIDDEN href="{% url 'user_guide' event.slug %}" class="dropdown-item text-dark">
+            <i class="ni ni-single-copy-04"></i>
+            <span>Guia de Usuario</span>
+        </a>
+        <a href="" class="dropdown-item" hidden>
+            <i class="ni ni-calendar-grid-58"></i>
+            <span>Activity</span>
+        </a>
+        <a href="" target="_blank"
+               class="dropdown-item highlight">
+                <i class="ni ni-world"></i>
+                <span class="mr-4">Descarga una muestra gratis</span>
+
+            </a>
+        <a href="{% url 'support' event.slug %}" class="dropdown-item">
+            <i class="ni ni-support-16"></i>
+            <span>Soporte</span>
+        </a>
+        <div class="dropdown-divider"></div>
+        <a href="http://137.184.4.252/" class="dropdown-item">
+            <i class="ni ni-user-run"></i>
+            <span>Salir</span>
+        </a>
+    </div>
+</li>
+<!--
+ENDS PROFILE DROPDOWN MENU
+-->
